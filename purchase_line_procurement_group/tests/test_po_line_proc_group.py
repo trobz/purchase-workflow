@@ -39,7 +39,7 @@ class TestPOLineProcurementGroup(SavepointCase):
                         (
                             0,
                             0,
-                            {"name": cls.pyromaniacs.id, "min_qty": 1, "price": 1.0,},
+                            {"name": cls.pyromaniacs.id, "min_qty": 1, "price": 1.0},
                         )
                     ],
                 }
@@ -75,7 +75,7 @@ class TestPOLineProcurementGroup(SavepointCase):
                             ).id,
                             "group_propagation_option": "fixed",
                             "group_id": cls.wh_wh2_pg.id,
-                            "propagate": True,
+                            "propagate_cancel": True,
                         },
                     )
                 ],
