@@ -21,9 +21,9 @@ class PurchaseOrderLine(models.Model):
         values,
     ):
         """Do no merge PO lines if procurement group is different."""
-        if values.get("group_id"):
+        if "group_id" in values:
             lines = self.filtered(
-                lambda l: l.procurement_group_id.id == values["group_id"].id
+                lambda l: l.procurement_group_id == values["group_id"]
             )
         else:
             lines = self
